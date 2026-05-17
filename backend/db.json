@@ -1,89 +1,89 @@
 {
   "categories": [
-    {
-      "id": "1",
-      "name": "Electrónicos"
-    },
-    {
-      "id": "2",
-      "name": "Ropa"
-    },
-    {
-      "id": "3",
-      "name": "Hogar"
-    }
+    { "id": "1", "name": "Ediciones Selectas" },
+    { "id": "2", "name": "Día de la Madre" },
+    { "id": "3", "name": "Desayunos" }
   ],
   "products": [
     {
       "id": "1",
-      "name": "Laptop",
-      "description": "Laptop gaming",
-      "price": 800,
-      "imageUrl": "https://picsum.photos/200/150?random=1",
+      "name": "Frambuesa Esencial",
+      "description": "Un gesto cuidado, pensado para acompañar y estar presente de una forma sutil, pero especial.",
+      "price": 35000,
+      "imageUrl": "https://picsum.photos/id/108/300/200",
       "categoryId": "1",
-      "stock": 10
-    },
-    {
-      "id": "2",
-      "name": "Camiseta",
-      "description": "Camiseta de algodón",
-      "price": 20,
-      "imageUrl": "https://picsum.photos/200/150?random=2",
-      "categoryId": "2",
-      "stock": 50
-    },
-    {
-      "id": "3",
-      "name": "Silla",
-      "description": "Silla de oficina",
-      "price": 150,
-      "imageUrl": "https://picsum.photos/200/150?random=3",
-      "categoryId": "3",
-      "stock": 5
-    },
-    {
-      "id": "4",
-      "name": "Mouse",
-      "description": "Mouse inalámbrico",
-      "price": 25,
-      "imageUrl": "https://picsum.photos/200/150?random=4",
-      "categoryId": "1",
-      "stock": 30
-    },
-    {
-      "id": "5",
-      "name": "Pantalón",
-      "description": "Jeans azul",
-      "price": 45,
-      "imageUrl": "https://picsum.photos/200/150?random=5",
-      "categoryId": "2",
-      "stock": 20
-    },
-    {
-      "id": "6",
-      "name": "Lámpara",
-      "description": "Lámpara LED",
-      "price": 35,
-      "imageUrl": "https://picsum.photos/200/150?random=6",
-      "categoryId": "3",
       "stock": 15
     },
     {
-      "id": "7",
-      "name": "Teclado",
-      "description": "Teclado mecánico",
-      "price": 60,
-      "imageUrl": "https://picsum.photos/200/150?random=7",
+      "id": "2",
+      "name": "Frambuesa Experiencia Principal",
+      "description": "Un regalo completo, listo para sorprender con intención, estética y detalle.",
+      "price": 68000,
+      "imageUrl": "https://picsum.photos/id/106/300/200",
+      "categoryId": "1",
+      "stock": 8
+    },
+    {
+      "id": "3",
+      "name": "Frambuesa Presente",
+      "description": "Un regalo pensado para sorprender de forma especial, equilibrando sabor, detalle y una presentación única.",
+      "price": 45000,
+      "imageUrl": "https://picsum.photos/id/107/300/200",
       "categoryId": "1",
       "stock": 12
     },
     {
-      "id": "8",
-      "name": "Gorra",
-      "description": "Gorra deportiva",
-      "price": 15,
-      "imageUrl": "https://picsum.photos/200/150?random=8",
+      "id": "4",
+      "name": "Para mamá Especial Frambuesa",
+      "description": "Un regalo pensado para sorprender a mamá de forma especial, combinando sabor, detalles y mucho cariño.",
+      "price": 45000,
+      "imageUrl": "https://picsum.photos/id/96/300/200",
       "categoryId": "2",
+      "stock": 20
+    },
+    {
+      "id": "5",
+      "name": "Para mamá Práctico Frambuesa",
+      "description": "Un detalle pensado para sorprender a mamá de forma sencilla, pero con intención y mucho amor.",
+      "price": 35000,
+      "imageUrl": "https://picsum.photos/id/97/300/200",
+      "categoryId": "2",
+      "stock": 25
+    },
+    {
+      "id": "6",
+      "name": "Para mamá Principal Frambuesa",
+      "description": "Un regalo pensado para sorprender con intención, detalle y una presentación que convierte cualquier ocasión en un momento inolvidable.",
+      "price": 65000,
+      "imageUrl": "https://picsum.photos/id/98/300/200",
+      "categoryId": "2",
+      "stock": 10
+    },
+    {
+      "id": "7",
+      "name": "Desayuno Frambuesa Clásico",
+      "description": "Desayuno sorpresa que incluye café premium, medialunas artesanales, jugo natural y una selección de dulces.",
+      "price": 28000,
+      "imageUrl": "https://picsum.photos/id/104/300/200",
+      "categoryId": "3",
+      "stock": 30
+    },
+    {
+      "id": "8",
+      "name": "Desayuno Frambuesa Deluxe",
+      "description": "La experiencia completa: desayuno con productos gourmet, flores frescas, tarjeta personalizada y un detalle sorpresa exclusivo.",
+      "price": 55000,
+      "imageUrl": "https://picsum.photos/id/105/300/200",
+      "categoryId": "3",
+      "stock": 12
+    },
+    {
+      "id": "9",
+      "name": "Mini Desayuno Frambuesa",
+      "description": "Un pequeño pero hermoso gesto. Ideal para sorprender sin esperar una ocasión especial.",
+      "price": 18000,
+      "imageUrl": "https://picsum.photos/id/103/300/200",
+      "categoryId": "3",
       "stock": 40
     }
   ]

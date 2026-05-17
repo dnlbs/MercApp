@@ -11,6 +11,9 @@
       <router-link :to="`/product/${product.id}`" class="details-link">
         Ver detalles
       </router-link>
+      <router-link :to="`/edit/${product.id}`" class="edit-link">
+        ✏️ Editar
+      </router-link>
     </div>
   </div>
 </template>
@@ -81,5 +84,18 @@ h3 {
   color: #42b983;
   text-decoration: none;
   font-size: 14px;
+}
+
+.edit-link {
+  display: block;
+  text-align: center;
+  color: #ff9800;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.edit-link:hover {
+  color: #e68900;
 }
 </style>
