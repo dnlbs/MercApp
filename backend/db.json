@@ -1,0 +1,90 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Electrónicos"
+    },
+    {
+      "id": "2",
+      "name": "Ropa"
+    },
+    {
+      "id": "3",
+      "name": "Hogar"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "description": "Laptop gaming",
+      "price": 800,
+      "imageUrl": "https://picsum.photos/200/150?random=1",
+      "categoryId": "1",
+      "stock": 10
+    },
+    {
+      "id": "2",
+      "name": "Camiseta",
+      "description": "Camiseta de algodón",
+      "price": 20,
+      "imageUrl": "https://picsum.photos/200/150?random=2",
+      "categoryId": "2",
+      "stock": 50
+    },
+    {
+      "id": "3",
+      "name": "Silla",
+      "description": "Silla de oficina",
+      "price": 150,
+      "imageUrl": "https://picsum.photos/200/150?random=3",
+      "categoryId": "3",
+      "stock": 5
+    },
+    {
+      "id": "4",
+      "name": "Mouse",
+      "description": "Mouse inalámbrico",
+      "price": 25,
+      "imageUrl": "https://picsum.photos/200/150?random=4",
+      "categoryId": "1",
+      "stock": 30
+    },
+    {
+      "id": "5",
+      "name": "Pantalón",
+      "description": "Jeans azul",
+      "price": 45,
+      "imageUrl": "https://picsum.photos/200/150?random=5",
+      "categoryId": "2",
+      "stock": 20
+    },
+    {
+      "id": "6",
+      "name": "Lámpara",
+      "description": "Lámpara LED",
+      "price": 35,
+      "imageUrl": "https://picsum.photos/200/150?random=6",
+      "categoryId": "3",
+      "stock": 15
+    },
+    {
+      "id": "7",
+      "name": "Teclado",
+      "description": "Teclado mecánico",
+      "price": 60,
+      "imageUrl": "https://picsum.photos/200/150?random=7",
+      "categoryId": "1",
+      "stock": 12
+    },
+    {
+      "id": "8",
+      "name": "Gorra",
+      "description": "Gorra deportiva",
+      "price": 15,
+      "imageUrl": "https://picsum.photos/200/150?random=8",
+      "categoryId": "2",
+      "stock": 40
+    }
+  ]
+}
