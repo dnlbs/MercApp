@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MercApp - Frambuesa | Documentación de despliegue</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.5;
+            background: #f9f9f9;
+            color: #1a2a1a;
+        }
+        h1, h2 {
+            color: #2d4a2c;
+        }
+        h1 {
+            border-bottom: 2px solid #e8a87c;
+            padding-bottom: 0.5rem;
+        }
+        a {
+            color: #2d4a2c;
+            text-decoration: none;
+            border-bottom: 1px dotted #e8a87c;
+        }
+        a:hover {
+            color: #e8a87c;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background: #2d4a2c;
+            color: white;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 0.9em;
+        }
+        .badge {
+            background: #2d4a2c;
+            color: white;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>🍓 MercApp - Frambuesa</h1>
+    <p><span class="badge">Despliegue completo</span> SPA + API propia + MongoDB Atlas</p>
+
+    <div class="card">
+        <h2>🌐 Enlaces del sistema</h2>
+        <ul>
+            <li><strong>Frontend (Netlify):</strong> <a href="https://cozy-gecko-6801de.netlify.app" target="_blank">https://cozy-gecko-6801de.netlify.app</a></li>
+            <li><strong>Backend API (Railway):</strong> <a href="https://mercapp-production-0628.up.railway.app/health" target="_blank">https://mercapp-production-0628.up.railway.app/health</a></li>
+            <li><strong>Repositorio GitHub:</strong> <a href="https://github.com/dnlbs/MercApp" target="_blank">github.com/dnlbs/MercApp</a></li>
+            <li><strong>Micrositio (esta página):</strong> <a href="https://dnlbs.github.io/MercApp/" target="_blank">https://dnlbs.github.io/MercApp/</a></li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🏗️ Arquitectura de despliegue</h2>
+        <p><strong>Frontend:</strong> Vue 3 + Vite → Netlify (CI desde GitHub)<br>
+        <strong>Backend:</strong> Node.js + Express → Railway (con Nixpacks)<br>
+        <strong>Base de datos:</strong> MongoDB Atlas (cluster M0 gratuito)<br>
+        <strong>Documentación:</strong> GitHub Pages (carpeta /docs)<br>
+        <strong>HTTPS:</strong> Activado en todos los servicios.</p>
+    </div>
+
+    <div class="card">
+        <h2>📦 Ejecución local</h2>
+        <pre><code>git clone https://github.com/dnlbs/MercApp.git
+cd MercApp/backend
+cp .env.example .env   # completar MONGODB_URI
+npm install
+npm run dev
+
+# Otra terminal:
+cd ../frontend
+cp .env.example .env   # VITE_API_URL=http://localhost:3000
+npm install
+npm run dev</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>📡 Endpoints de la API</h2>
+        <table>
+            <thead>
+                <tr><th>Método</th><th>Ruta</th><th>Descripción</th><th>Ejemplo Request/Response</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>GET</td><td><code>/api/products</code></td><td>Listar productos</td><td><a href="https://mercapp-production-0628.up.railway.app/api/products" target="_blank">Ver JSON</a></td></tr>
+                <tr><td>GET</td><td><code>/api/products/:id</code></td><td>Obtener un producto</td><td><code>/api/products/6a1cc04e46a2a05456f2d5f4</code></td></tr>
+                <tr><td>POST</td><td><code>/api/products</code></td><td>Crear producto</td><td><code>{"name":"Nuevo","price":100,"stock":5,"category":"1"}</code></td></tr>
+                <tr><td>PUT</td><td><code>/api/products/:id</code></td><td>Actualizar</td><td>Mismo body que POST</td></tr>
+                <tr><td>DELETE</td><td><code>/api/products/:id</code></td><td>Eliminar</td><td>-</td></tr>
+                <tr><td>GET</td><td><code>/api/categories</code></td><td>Listar categorías</td><td><a href="https://mercapp-production-0628.up.railway.app/api/categories" target="_blank">Ver JSON</a></td></tr>
+                <tr><td>GET</td><td><code>/health</code></td><td>Estado del servidor</td><td><a href="https://mercapp-production-0628.up.railway.app/health" target="_blank">Ver JSON</a></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        Proyecto desarrollado por Evelyn Daniela Domínguez – Unidad 4, Despliegue y publicación de aplicaciones.<br>
+        <span style="font-size:0.7rem;">Frambuesa – Regalos y desayunos sorpresa</span>
+    </footer>
+</body>
+</html>
