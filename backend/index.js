@@ -17,9 +17,14 @@ app.use(cors());
 app.use(express.json());
 
 // Conectar a MongoDB Atlas
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('✅ Conectado a MongoDB Atlas'))
-  .catch(err => console.error('❌ Error de conexión:', err));
+// Conectar a MongoDB Atlas con opciones de timeout
+mongoose.connect(process.env.MONGODB_URI, {
+  serverSelectionTimeoutMS: 30000, // 30 segundos para seleccionar servidor
+  socketTimeoutMS: 45000,          // 45 segundos para operaciones de socket
+  connectTimeoutMS: 30000          // 30 segundos para conexión inicial
+})
+.then(() => console.log('✅ Conectado a MongoDB Atlas'))
+.catch(err => console.error('❌ Error de conexión:', err));
 
 // --- Endpoints ---
 
