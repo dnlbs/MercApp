@@ -63,6 +63,9 @@ const loading = ref(false)
 const error = ref(null)
 const success = ref(false)
 
+// URL base de la API
+const API_URL = import.meta.env.VITE_API_URL
+
 const form = ref({
   name: '',
   description: '',
@@ -74,7 +77,7 @@ const form = ref({
 
 const fetchCategories = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/categories')
+    const res = await fetch(`${API_URL}/api/categories`)
     categories.value = await res.json()
   } catch (err) {
     console.error('Error cargando categorías')
@@ -84,14 +87,14 @@ const fetchCategories = async () => {
 const fetchProduct = async () => {
   if (!isEdit.value) return
   try {
-    const res = await fetch(`http://localhost:3000/api/products/${route.params.id}`)
+    const res = await fetch(`${API_URL}/api/products/${route.params.id}`)
     const product = await res.json()
     form.value = {
       name: product.name,
       description: product.description,
       price: product.price,
-      imageUrl: product.imageUrl,
-      categoryId: product.categoryId,
+      imageUrl: product.image,
+      categoryId: product.category,
       stock: product.stock
     }
   } catch (err) {
@@ -106,14 +109,24 @@ const submitForm = async () => {
 
   const method = isEdit.value ? 'PUT' : 'POST'
   const url = isEdit.value 
-    ? `http://localhost:3000/api/products/${route.params.id}`
-    : 'http://localhost:3000/api/products'
+    ? `${API_URL}/api/products/${route.params.id}`
+    : `${API_URL}/api/products`
+
+  // Convertir el payload para que coincida con el modelo del backend
+  const payload = {
+    name: form.value.name,
+    description: form.value.description,
+    price: parseFloat(form.value.price),
+    image: form.value.imageUrl,
+    category: form.value.categoryId,
+    stock: parseInt(form.value.stock, 10)
+  }
 
   try {
     const res = await fetch(url, {
       method,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form.value)
+      body: JSON.stringify(payload)
     })
 
     if (!res.ok) throw new Error('Error al guardar')
@@ -135,7 +148,7 @@ onMounted(() => {
 })
 </script>
 
-<style>
+<style scoped>
 .form-container {
   max-width: 600px;
   margin: 0 auto;

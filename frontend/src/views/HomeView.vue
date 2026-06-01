@@ -44,12 +44,17 @@ const error = ref(null)
 const searchTerm = ref('')
 const selectedCategory = ref('')
 
+// URL base de la API (desde variable de entorno)
+const API_URL = import.meta.env.VITE_API_URL
+
 const fetchProducts = async () => {
   loading.value = true
   try {
-    const res = await fetch('http://localhost:3000/api/products')
+    const res = await fetch(`${API_URL}/api/products`)
+    if (!res.ok) throw new Error('Error en la respuesta del servidor')
     products.value = await res.json()
   } catch (err) {
+    console.error(err)
     error.value = 'Error al cargar productos. ¿El backend está corriendo?'
   } finally {
     loading.value = false
@@ -58,10 +63,11 @@ const fetchProducts = async () => {
 
 const fetchCategories = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/categories')
+    const res = await fetch(`${API_URL}/api/categories`)
+    if (!res.ok) throw new Error('Error al cargar categorías')
     categories.value = await res.json()
   } catch (err) {
-    console.error('Error cargando categorías')
+    console.error('Error cargando categorías', err)
   }
 }
 
@@ -75,7 +81,8 @@ const filteredProducts = computed(() => {
   }
   
   if (selectedCategory.value) {
-    result = result.filter(p => p.categoryId === selectedCategory.value)
+    // Nota: en MongoDB el campo se llama "category" (no "categoryId")
+    result = result.filter(p => p.category === selectedCategory.value)
   }
   
   return result
@@ -91,7 +98,7 @@ onMounted(() => {
 })
 </script>
 
-<style>
+<style scoped>
 .home {
   padding: 20px;
   max-width: 1200px;
