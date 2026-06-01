@@ -5,3 +5,4 @@
 
 [build.environment]
   VITE_API_URL = "https://mercapp-production-0628.up.railway.app"
+  
